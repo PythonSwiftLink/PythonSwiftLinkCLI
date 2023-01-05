@@ -14,7 +14,7 @@ if folder/project is already created then you can skip this part
 
 
 
-Setting up kivy-ios folder with PythonSwiftLinkCLI:
+## Setting up kivy-ios folder with PythonSwiftLinkCLI:
 
 make sure your in the root path of your folder, in the terminal window
 
