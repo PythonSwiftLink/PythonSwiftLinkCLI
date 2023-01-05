@@ -1,0 +1,397 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8C6BB828295AF68700AC0990 /* PBXProjWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6BB827295AF68700AC0990 /* PBXProjWrapper.swift */; };
+		8C6BB82B295AF76B00AC0990 /* XcodeProj in Frameworks */ = {isa = PBXBuildFile; productRef = 8C6BB82A295AF76B00AC0990 /* XcodeProj */; };
+		8C6BB831295AFDB300AC0990 /* Extensions_Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6BB830295AFDB300AC0990 /* Extensions_Helpers.swift */; };
+		8C6BB833295AFFF300AC0990 /* CodeTemplates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6BB832295AFFF300AC0990 /* CodeTemplates.swift */; };
+		8C6BB835295B1B7F00AC0990 /* version.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6BB834295B1B7F00AC0990 /* version.swift */; };
+		8CA2D71B295A42FA00A93E30 /* cli.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA2D71A295A42FA00A93E30 /* cli.swift */; };
+		8CA2D72D295A4B8300A93E30 /* ArgumentParser in Frameworks */ = {isa = PBXBuildFile; productRef = 8CA2D72C295A4B8300A93E30 /* ArgumentParser */; };
+		8CA2D730295A572D00A93E30 /* PythonHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA2D72F295A572C00A93E30 /* PythonHandler.swift */; };
+		8CA2D735295A6DCD00A93E30 /* CreateVenv.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA2D734295A6DCD00A93E30 /* CreateVenv.swift */; };
+		8CA2D73C295AF5B000A93E30 /* PythonSwiftLink_Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA2D73B295AF5B000A93E30 /* PythonSwiftLink_Project.swift */; };
+		8CB16791295BDB5200D3E2C5 /* PythonSwiftLinkParser in Frameworks */ = {isa = PBXBuildFile; productRef = 8CB16790295BDB5200D3E2C5 /* PythonSwiftLinkParser */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8CA2D715295A42FA00A93E30 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		8C6BB827295AF68700AC0990 /* PBXProjWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PBXProjWrapper.swift; path = ../../PythonSwiftLink/PythonSwiftLink/PBXProjWrapper.swift; sourceTree = "<group>"; };
+		8C6BB830295AFDB300AC0990 /* Extensions_Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extensions_Helpers.swift; path = ../../PythonSwiftLink/PythonSwiftLink/Extensions_Helpers.swift; sourceTree = "<group>"; };
+		8C6BB832295AFFF300AC0990 /* CodeTemplates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CodeTemplates.swift; path = ../../PythonSwiftLink/PythonSwiftLink/DB_files/CodeTemplates.swift; sourceTree = "<group>"; };
+		8C6BB834295B1B7F00AC0990 /* version.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = version.swift; path = ../../PythonSwiftLink/PythonSwiftLink/version.swift; sourceTree = "<group>"; };
+		8CA2D717295A42FA00A93E30 /* PythonSwiftLinkCLI */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = PythonSwiftLinkCLI; sourceTree = BUILT_PRODUCTS_DIR; };
+		8CA2D71A295A42FA00A93E30 /* cli.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cli.swift; sourceTree = "<group>"; };
+		8CA2D72F295A572C00A93E30 /* PythonHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PythonHandler.swift; path = ../../PythonSwiftLink/PythonSwiftLink/PythonHandler.swift; sourceTree = "<group>"; };
+		8CA2D731295A597000A93E30 /* PythonSwiftLinkCLI.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PythonSwiftLinkCLI.entitlements; sourceTree = "<group>"; };
+		8CA2D734295A6DCD00A93E30 /* CreateVenv.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateVenv.swift; sourceTree = "<group>"; };
+		8CA2D73B295AF5B000A93E30 /* PythonSwiftLink_Project.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PythonSwiftLink_Project.swift; path = ../../PythonSwiftLink/PythonSwiftLink/PythonSwiftLink_Project.swift; sourceTree = "<group>"; };
+		8CB1678F295BD9E400D3E2C5 /* PythonSwiftLinkParser */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = PythonSwiftLinkParser; path = ../PythonSwiftLinkParser; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8CA2D714295A42FA00A93E30 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8CA2D72D295A4B8300A93E30 /* ArgumentParser in Frameworks */,
+				8CB16791295BDB5200D3E2C5 /* PythonSwiftLinkParser in Frameworks */,
+				8C6BB82B295AF76B00AC0990 /* XcodeProj in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8CA2D70E295A42FA00A93E30 = {
+			isa = PBXGroup;
+			children = (
+				8CA2D726295A44BE00A93E30 /* Packages */,
+				8CA2D719295A42FA00A93E30 /* PythonSwiftLinkCLI */,
+				8CA2D718295A42FA00A93E30 /* Products */,
+				8CA2D728295A45CD00A93E30 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		8CA2D718295A42FA00A93E30 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8CA2D717295A42FA00A93E30 /* PythonSwiftLinkCLI */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8CA2D719295A42FA00A93E30 /* PythonSwiftLinkCLI */ = {
+			isa = PBXGroup;
+			children = (
+				8CA2D731295A597000A93E30 /* PythonSwiftLinkCLI.entitlements */,
+				8CA2D71A295A42FA00A93E30 /* cli.swift */,
+				8CA2D734295A6DCD00A93E30 /* CreateVenv.swift */,
+				8CA2D72F295A572C00A93E30 /* PythonHandler.swift */,
+				8CA2D73B295AF5B000A93E30 /* PythonSwiftLink_Project.swift */,
+				8C6BB827295AF68700AC0990 /* PBXProjWrapper.swift */,
+				8C6BB830295AFDB300AC0990 /* Extensions_Helpers.swift */,
+				8C6BB834295B1B7F00AC0990 /* version.swift */,
+				8C6BB832295AFFF300AC0990 /* CodeTemplates.swift */,
+			);
+			path = PythonSwiftLinkCLI;
+			sourceTree = "<group>";
+		};
+		8CA2D726295A44BE00A93E30 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				8CB1678F295BD9E400D3E2C5 /* PythonSwiftLinkParser */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
+		8CA2D728295A45CD00A93E30 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8CA2D716295A42FA00A93E30 /* PythonSwiftLinkCLI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8CA2D71E295A42FA00A93E30 /* Build configuration list for PBXNativeTarget "PythonSwiftLinkCLI" */;
+			buildPhases = (
+				8CA2D713295A42FA00A93E30 /* Sources */,
+				8CA2D714295A42FA00A93E30 /* Frameworks */,
+				8CA2D715295A42FA00A93E30 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PythonSwiftLinkCLI;
+			packageProductDependencies = (
+				8CA2D72C295A4B8300A93E30 /* ArgumentParser */,
+				8C6BB82A295AF76B00AC0990 /* XcodeProj */,
+				8CB16790295BDB5200D3E2C5 /* PythonSwiftLinkParser */,
+			);
+			productName = PythonSwiftLinkCLI;
+			productReference = 8CA2D717295A42FA00A93E30 /* PythonSwiftLinkCLI */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8CA2D70F295A42FA00A93E30 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				KnownAssetTags = (
+					New,
+				);
+				LastSwiftUpdateCheck = 1400;
+				LastUpgradeCheck = 1400;
+				TargetAttributes = {
+					8CA2D716295A42FA00A93E30 = {
+						CreatedOnToolsVersion = 14.0.1;
+					};
+				};
+			};
+			buildConfigurationList = 8CA2D712295A42FA00A93E30 /* Build configuration list for PBXProject "PythonSwiftLinkCLI" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8CA2D70E295A42FA00A93E30;
+			packageReferences = (
+				8CA2D72B295A4B8300A93E30 /* XCRemoteSwiftPackageReference "swift-argument-parser" */,
+				8C6BB829295AF76B00AC0990 /* XCRemoteSwiftPackageReference "XcodeProj" */,
+			);
+			productRefGroup = 8CA2D718295A42FA00A93E30 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8CA2D716295A42FA00A93E30 /* PythonSwiftLinkCLI */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8CA2D713295A42FA00A93E30 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8C6BB833295AFFF300AC0990 /* CodeTemplates.swift in Sources */,
+				8C6BB828295AF68700AC0990 /* PBXProjWrapper.swift in Sources */,
+				8CA2D730295A572D00A93E30 /* PythonHandler.swift in Sources */,
+				8CA2D71B295A42FA00A93E30 /* cli.swift in Sources */,
+				8C6BB831295AFDB300AC0990 /* Extensions_Helpers.swift in Sources */,
+				8CA2D735295A6DCD00A93E30 /* CreateVenv.swift in Sources */,
+				8C6BB835295B1B7F00AC0990 /* version.swift in Sources */,
+				8CA2D73C295AF5B000A93E30 /* PythonSwiftLink_Project.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		8CA2D71C295A42FA00A93E30 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8CA2D71D295A42FA00A93E30 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		8CA2D71F295A42FA00A93E30 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = PythonSwiftLinkCLI/PythonSwiftLinkCLI.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = U7AZRR7LN3;
+				ENABLE_HARDENED_RUNTIME = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		8CA2D720295A42FA00A93E30 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = PythonSwiftLinkCLI/PythonSwiftLinkCLI.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = U7AZRR7LN3;
+				ENABLE_HARDENED_RUNTIME = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8CA2D712295A42FA00A93E30 /* Build configuration list for PBXProject "PythonSwiftLinkCLI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8CA2D71C295A42FA00A93E30 /* Debug */,
+				8CA2D71D295A42FA00A93E30 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8CA2D71E295A42FA00A93E30 /* Build configuration list for PBXNativeTarget "PythonSwiftLinkCLI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8CA2D71F295A42FA00A93E30 /* Debug */,
+				8CA2D720295A42FA00A93E30 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8C6BB829295AF76B00AC0990 /* XCRemoteSwiftPackageReference "XcodeProj" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/tuist/XcodeProj";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		8CA2D72B295A4B8300A93E30 /* XCRemoteSwiftPackageReference "swift-argument-parser" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-argument-parser.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8C6BB82A295AF76B00AC0990 /* XcodeProj */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8C6BB829295AF76B00AC0990 /* XCRemoteSwiftPackageReference "XcodeProj" */;
+			productName = XcodeProj;
+		};
+		8CA2D72C295A4B8300A93E30 /* ArgumentParser */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8CA2D72B295A4B8300A93E30 /* XCRemoteSwiftPackageReference "swift-argument-parser" */;
+			productName = ArgumentParser;
+		};
+		8CB16790295BDB5200D3E2C5 /* PythonSwiftLinkParser */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = PythonSwiftLinkParser;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 8CA2D70F295A42FA00A93E30 /* Project object */;
+}
