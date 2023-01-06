@@ -2,7 +2,7 @@
 
 ```sh
 cd <download folder>
-chmod -x PythonSwiftLinkCLI/PythonSwiftLinkCLI
+chmod 755 PythonSwiftLinkCLI/PythonSwiftLinkCLI
 cp -rf PythonSwiftLinkCLI /usr/local/bin
 ln -s /usr/local/bin/PythonSwiftLinkCLI/PythonSwiftLinkCLI /usr/local/bin/psl
 ```
