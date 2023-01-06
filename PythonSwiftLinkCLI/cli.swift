@@ -167,6 +167,7 @@ extension PythonSwiftLinkCLI {
                 let source_files = try FileManager.default.contentsOfDirectory(at: proj_dir.appendingPathComponent("wrapper_sources"), includingPropertiesForKeys: nil)
                 
                 try await source_files.asyncForEach { url in
+                    if url.lastPathComponent == ".DS_Store" { return }
                     try await handleWrapperFile(source_path: url, destination_folder: wrapper_builds, python_init: false)
                 }
                 
@@ -176,6 +177,7 @@ extension PythonSwiftLinkCLI {
                 if let group = xc.xc_handler.get_or_create_group("PythonSwiftWrappers") {
                     
                     try FileManager.default.contentsOfDirectory(at: wrapper_builds, includingPropertiesForKeys: nil).forEach { url in
+                        if url.lastPathComponent == ".DS_Store" { return }
                         try xc.xc_handler.add_file(path: url.Path, group: group)
                     }
                     
