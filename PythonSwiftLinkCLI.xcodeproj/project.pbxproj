@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8C56494C296C43CE0074C10B /* ProjectFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C56494B296C43CE0074C10B /* ProjectFile.swift */; };
+		8C564953296CA2540074C10B /* WrapperPackageHandler in Frameworks */ = {isa = PBXBuildFile; productRef = 8C564952296CA2540074C10B /* WrapperPackageHandler */; };
+		8C56495A296D82310074C10B /* AstorWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C564959296D82310074C10B /* AstorWrapper.swift */; };
 		8C6BB828295AF68700AC0990 /* PBXProjWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6BB827295AF68700AC0990 /* PBXProjWrapper.swift */; };
 		8C6BB82B295AF76B00AC0990 /* XcodeProj in Frameworks */ = {isa = PBXBuildFile; productRef = 8C6BB82A295AF76B00AC0990 /* XcodeProj */; };
 		8C6BB831295AFDB300AC0990 /* Extensions_Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6BB830295AFDB300AC0990 /* Extensions_Helpers.swift */; };
@@ -33,6 +36,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8C56494B296C43CE0074C10B /* ProjectFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectFile.swift; sourceTree = "<group>"; };
+		8C564951296CA1650074C10B /* WrapperPackageHandler */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = WrapperPackageHandler; path = ../WrapperPackageHandler; sourceTree = "<group>"; };
+		8C564959296D82310074C10B /* AstorWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstorWrapper.swift; sourceTree = "<group>"; };
 		8C6BB827295AF68700AC0990 /* PBXProjWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PBXProjWrapper.swift; path = ../../PythonSwiftLink/PythonSwiftLink/PBXProjWrapper.swift; sourceTree = "<group>"; };
 		8C6BB830295AFDB300AC0990 /* Extensions_Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extensions_Helpers.swift; path = ../../PythonSwiftLink/PythonSwiftLink/Extensions_Helpers.swift; sourceTree = "<group>"; };
 		8C6BB832295AFFF300AC0990 /* CodeTemplates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CodeTemplates.swift; path = ../../PythonSwiftLink/PythonSwiftLink/DB_files/CodeTemplates.swift; sourceTree = "<group>"; };
@@ -51,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C564953296CA2540074C10B /* WrapperPackageHandler in Frameworks */,
 				8CA2D72D295A4B8300A93E30 /* ArgumentParser in Frameworks */,
 				8CB16791295BDB5200D3E2C5 /* PythonSwiftLinkParser in Frameworks */,
 				8C6BB82B295AF76B00AC0990 /* XcodeProj in Frameworks */,
@@ -85,11 +92,13 @@
 				8CA2D71A295A42FA00A93E30 /* cli.swift */,
 				8CA2D734295A6DCD00A93E30 /* CreateVenv.swift */,
 				8CA2D72F295A572C00A93E30 /* PythonHandler.swift */,
+				8C564959296D82310074C10B /* AstorWrapper.swift */,
 				8CA2D73B295AF5B000A93E30 /* PythonSwiftLink_Project.swift */,
 				8C6BB827295AF68700AC0990 /* PBXProjWrapper.swift */,
 				8C6BB830295AFDB300AC0990 /* Extensions_Helpers.swift */,
 				8C6BB834295B1B7F00AC0990 /* version.swift */,
 				8C6BB832295AFFF300AC0990 /* CodeTemplates.swift */,
+				8C56494B296C43CE0074C10B /* ProjectFile.swift */,
 			);
 			path = PythonSwiftLinkCLI;
 			sourceTree = "<group>";
@@ -97,6 +106,7 @@
 		8CA2D726295A44BE00A93E30 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
+				8C564951296CA1650074C10B /* WrapperPackageHandler */,
 				8CB1678F295BD9E400D3E2C5 /* PythonSwiftLinkParser */,
 			);
 			name = Packages;
@@ -129,6 +139,7 @@
 				8CA2D72C295A4B8300A93E30 /* ArgumentParser */,
 				8C6BB82A295AF76B00AC0990 /* XcodeProj */,
 				8CB16790295BDB5200D3E2C5 /* PythonSwiftLinkParser */,
+				8C564952296CA2540074C10B /* WrapperPackageHandler */,
 			);
 			productName = PythonSwiftLinkCLI;
 			productReference = 8CA2D717295A42FA00A93E30 /* PythonSwiftLinkCLI */;
@@ -186,6 +197,8 @@
 				8C6BB831295AFDB300AC0990 /* Extensions_Helpers.swift in Sources */,
 				8CA2D735295A6DCD00A93E30 /* CreateVenv.swift in Sources */,
 				8C6BB835295B1B7F00AC0990 /* version.swift in Sources */,
+				8C56495A296D82310074C10B /* AstorWrapper.swift in Sources */,
+				8C56494C296C43CE0074C10B /* ProjectFile.swift in Sources */,
 				8CA2D73C295AF5B000A93E30 /* PythonSwiftLink_Project.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -377,6 +390,10 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		8C564952296CA2540074C10B /* WrapperPackageHandler */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = WrapperPackageHandler;
+		};
 		8C6BB82A295AF76B00AC0990 /* XcodeProj */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 8C6BB829295AF76B00AC0990 /* XCRemoteSwiftPackageReference "XcodeProj" */;
