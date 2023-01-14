@@ -15,12 +15,22 @@
 		8C6BB831295AFDB300AC0990 /* Extensions_Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6BB830295AFDB300AC0990 /* Extensions_Helpers.swift */; };
 		8C6BB833295AFFF300AC0990 /* CodeTemplates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6BB832295AFFF300AC0990 /* CodeTemplates.swift */; };
 		8C6BB835295B1B7F00AC0990 /* version.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6BB834295B1B7F00AC0990 /* version.swift */; };
+		8C7B40802972E86900CD470B /* PyCodable in Frameworks */ = {isa = PBXBuildFile; productRef = 8C7B407F2972E86900CD470B /* PyCodable */; };
 		8CA2D71B295A42FA00A93E30 /* cli.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA2D71A295A42FA00A93E30 /* cli.swift */; };
 		8CA2D72D295A4B8300A93E30 /* ArgumentParser in Frameworks */ = {isa = PBXBuildFile; productRef = 8CA2D72C295A4B8300A93E30 /* ArgumentParser */; };
 		8CA2D730295A572D00A93E30 /* PythonHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA2D72F295A572C00A93E30 /* PythonHandler.swift */; };
 		8CA2D735295A6DCD00A93E30 /* CreateVenv.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA2D734295A6DCD00A93E30 /* CreateVenv.swift */; };
 		8CA2D73C295AF5B000A93E30 /* PythonSwiftLink_Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA2D73B295AF5B000A93E30 /* PythonSwiftLink_Project.swift */; };
 		8CB16791295BDB5200D3E2C5 /* PythonSwiftLinkParser in Frameworks */ = {isa = PBXBuildFile; productRef = 8CB16790295BDB5200D3E2C5 /* PythonSwiftLinkParser */; };
+		8CEF946D297035C5009FCD22 /* FileWrapper+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEF946C297035C5009FCD22 /* FileWrapper+Extensions.swift */; };
+		8CEF946F29703829009FCD22 /* Sequence+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEF946E29703829009FCD22 /* Sequence+Extension.swift */; };
+		8CEF947229705303009FCD22 /* FileWrapperEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEF947129705303009FCD22 /* FileWrapperEx.swift */; };
+		8CEF94742970533B009FCD22 /* FileWrapperEx+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEF94732970533B009FCD22 /* FileWrapperEx+Extensions.swift */; };
+		8CEF947929707BAE009FCD22 /* CLI+Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEF947829707BAE009FCD22 /* CLI+Project.swift */; };
+		8CEF947B29707C60009FCD22 /* CLI+Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEF947A29707C60009FCD22 /* CLI+Config.swift */; };
+		8CEF947D29707CC0009FCD22 /* CLI+SwiftTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEF947C29707CC0009FCD22 /* CLI+SwiftTools.swift */; };
+		8CEF948029707D45009FCD22 /* SwiftTools+Install.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEF947F29707D45009FCD22 /* SwiftTools+Install.swift */; };
+		8CEF94852971F216009FCD22 /* SwiftPrettyPrint in Frameworks */ = {isa = PBXBuildFile; productRef = 8CEF94842971F216009FCD22 /* SwiftPrettyPrint */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -43,6 +53,7 @@
 		8C6BB830295AFDB300AC0990 /* Extensions_Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extensions_Helpers.swift; path = ../../PythonSwiftLink/PythonSwiftLink/Extensions_Helpers.swift; sourceTree = "<group>"; };
 		8C6BB832295AFFF300AC0990 /* CodeTemplates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CodeTemplates.swift; path = ../../PythonSwiftLink/PythonSwiftLink/DB_files/CodeTemplates.swift; sourceTree = "<group>"; };
 		8C6BB834295B1B7F00AC0990 /* version.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = version.swift; path = ../../PythonSwiftLink/PythonSwiftLink/version.swift; sourceTree = "<group>"; };
+		8C7B407E2972E83600CD470B /* PyCodable */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = PyCodable; path = ../PyCodable; sourceTree = "<group>"; };
 		8CA2D717295A42FA00A93E30 /* PythonSwiftLinkCLI */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = PythonSwiftLinkCLI; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CA2D71A295A42FA00A93E30 /* cli.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cli.swift; sourceTree = "<group>"; };
 		8CA2D72F295A572C00A93E30 /* PythonHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PythonHandler.swift; path = ../../PythonSwiftLink/PythonSwiftLink/PythonHandler.swift; sourceTree = "<group>"; };
@@ -50,6 +61,15 @@
 		8CA2D734295A6DCD00A93E30 /* CreateVenv.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateVenv.swift; sourceTree = "<group>"; };
 		8CA2D73B295AF5B000A93E30 /* PythonSwiftLink_Project.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PythonSwiftLink_Project.swift; path = ../../PythonSwiftLink/PythonSwiftLink/PythonSwiftLink_Project.swift; sourceTree = "<group>"; };
 		8CB1678F295BD9E400D3E2C5 /* PythonSwiftLinkParser */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = PythonSwiftLinkParser; path = ../PythonSwiftLinkParser; sourceTree = "<group>"; };
+		8CEF946C297035C5009FCD22 /* FileWrapper+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileWrapper+Extensions.swift"; sourceTree = "<group>"; };
+		8CEF946E29703829009FCD22 /* Sequence+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sequence+Extension.swift"; sourceTree = "<group>"; };
+		8CEF947129705303009FCD22 /* FileWrapperEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileWrapperEx.swift; sourceTree = "<group>"; };
+		8CEF94732970533B009FCD22 /* FileWrapperEx+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileWrapperEx+Extensions.swift"; sourceTree = "<group>"; };
+		8CEF947829707BAE009FCD22 /* CLI+Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLI+Project.swift"; sourceTree = "<group>"; };
+		8CEF947A29707C60009FCD22 /* CLI+Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLI+Config.swift"; sourceTree = "<group>"; };
+		8CEF947C29707CC0009FCD22 /* CLI+SwiftTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLI+SwiftTools.swift"; sourceTree = "<group>"; };
+		8CEF947F29707D45009FCD22 /* SwiftTools+Install.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SwiftTools+Install.swift"; sourceTree = "<group>"; };
+		8CEF948629720F09009FCD22 /* PythonDecoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PythonDecoder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +77,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CEF94852971F216009FCD22 /* SwiftPrettyPrint in Frameworks */,
 				8C564953296CA2540074C10B /* WrapperPackageHandler in Frameworks */,
+				8C7B40802972E86900CD470B /* PyCodable in Frameworks */,
 				8CA2D72D295A4B8300A93E30 /* ArgumentParser in Frameworks */,
 				8CB16791295BDB5200D3E2C5 /* PythonSwiftLinkParser in Frameworks */,
 				8C6BB82B295AF76B00AC0990 /* XcodeProj in Frameworks */,
@@ -90,12 +112,18 @@
 			children = (
 				8CA2D731295A597000A93E30 /* PythonSwiftLinkCLI.entitlements */,
 				8CA2D71A295A42FA00A93E30 /* cli.swift */,
+				8CEF947729707B3E009FCD22 /* Commands */,
 				8CA2D734295A6DCD00A93E30 /* CreateVenv.swift */,
 				8CA2D72F295A572C00A93E30 /* PythonHandler.swift */,
+				8CEF948629720F09009FCD22 /* PythonDecoder.swift */,
 				8C564959296D82310074C10B /* AstorWrapper.swift */,
 				8CA2D73B295AF5B000A93E30 /* PythonSwiftLink_Project.swift */,
 				8C6BB827295AF68700AC0990 /* PBXProjWrapper.swift */,
 				8C6BB830295AFDB300AC0990 /* Extensions_Helpers.swift */,
+				8CEF946E29703829009FCD22 /* Sequence+Extension.swift */,
+				8CEF946C297035C5009FCD22 /* FileWrapper+Extensions.swift */,
+				8CEF947129705303009FCD22 /* FileWrapperEx.swift */,
+				8CEF94732970533B009FCD22 /* FileWrapperEx+Extensions.swift */,
 				8C6BB834295B1B7F00AC0990 /* version.swift */,
 				8C6BB832295AFFF300AC0990 /* CodeTemplates.swift */,
 				8C56494B296C43CE0074C10B /* ProjectFile.swift */,
@@ -108,6 +136,7 @@
 			children = (
 				8C564951296CA1650074C10B /* WrapperPackageHandler */,
 				8CB1678F295BD9E400D3E2C5 /* PythonSwiftLinkParser */,
+				8C7B407E2972E83600CD470B /* PyCodable */,
 			);
 			name = Packages;
 			sourceTree = "<group>";
@@ -117,6 +146,25 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8CEF947729707B3E009FCD22 /* Commands */ = {
+			isa = PBXGroup;
+			children = (
+				8CEF947829707BAE009FCD22 /* CLI+Project.swift */,
+				8CEF947A29707C60009FCD22 /* CLI+Config.swift */,
+				8CEF947E29707D17009FCD22 /* CLI+SwiftTools */,
+			);
+			path = Commands;
+			sourceTree = "<group>";
+		};
+		8CEF947E29707D17009FCD22 /* CLI+SwiftTools */ = {
+			isa = PBXGroup;
+			children = (
+				8CEF947C29707CC0009FCD22 /* CLI+SwiftTools.swift */,
+				8CEF947F29707D45009FCD22 /* SwiftTools+Install.swift */,
+			);
+			path = "CLI+SwiftTools";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,6 +188,8 @@
 				8C6BB82A295AF76B00AC0990 /* XcodeProj */,
 				8CB16790295BDB5200D3E2C5 /* PythonSwiftLinkParser */,
 				8C564952296CA2540074C10B /* WrapperPackageHandler */,
+				8CEF94842971F216009FCD22 /* SwiftPrettyPrint */,
+				8C7B407F2972E86900CD470B /* PyCodable */,
 			);
 			productName = PythonSwiftLinkCLI;
 			productReference = 8CA2D717295A42FA00A93E30 /* PythonSwiftLinkCLI */;
@@ -175,6 +225,7 @@
 			packageReferences = (
 				8CA2D72B295A4B8300A93E30 /* XCRemoteSwiftPackageReference "swift-argument-parser" */,
 				8C6BB829295AF76B00AC0990 /* XCRemoteSwiftPackageReference "XcodeProj" */,
+				8CEF94832971F216009FCD22 /* XCRemoteSwiftPackageReference "SwiftPrettyPrint" */,
 			);
 			productRefGroup = 8CA2D718295A42FA00A93E30 /* Products */;
 			projectDirPath = "";
@@ -190,15 +241,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CEF947229705303009FCD22 /* FileWrapperEx.swift in Sources */,
 				8C6BB833295AFFF300AC0990 /* CodeTemplates.swift in Sources */,
 				8C6BB828295AF68700AC0990 /* PBXProjWrapper.swift in Sources */,
 				8CA2D730295A572D00A93E30 /* PythonHandler.swift in Sources */,
+				8CEF947B29707C60009FCD22 /* CLI+Config.swift in Sources */,
+				8CEF948029707D45009FCD22 /* SwiftTools+Install.swift in Sources */,
+				8CEF947D29707CC0009FCD22 /* CLI+SwiftTools.swift in Sources */,
+				8CEF947929707BAE009FCD22 /* CLI+Project.swift in Sources */,
+				8CEF946D297035C5009FCD22 /* FileWrapper+Extensions.swift in Sources */,
+				8CEF946F29703829009FCD22 /* Sequence+Extension.swift in Sources */,
 				8CA2D71B295A42FA00A93E30 /* cli.swift in Sources */,
 				8C6BB831295AFDB300AC0990 /* Extensions_Helpers.swift in Sources */,
 				8CA2D735295A6DCD00A93E30 /* CreateVenv.swift in Sources */,
 				8C6BB835295B1B7F00AC0990 /* version.swift in Sources */,
 				8C56495A296D82310074C10B /* AstorWrapper.swift in Sources */,
 				8C56494C296C43CE0074C10B /* ProjectFile.swift in Sources */,
+				8CEF94742970533B009FCD22 /* FileWrapperEx+Extensions.swift in Sources */,
 				8CA2D73C295AF5B000A93E30 /* PythonSwiftLink_Project.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -387,6 +446,14 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		8CEF94832971F216009FCD22 /* XCRemoteSwiftPackageReference "SwiftPrettyPrint" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/YusukeHosonuma/SwiftPrettyPrint";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -399,6 +466,10 @@
 			package = 8C6BB829295AF76B00AC0990 /* XCRemoteSwiftPackageReference "XcodeProj" */;
 			productName = XcodeProj;
 		};
+		8C7B407F2972E86900CD470B /* PyCodable */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = PyCodable;
+		};
 		8CA2D72C295A4B8300A93E30 /* ArgumentParser */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 8CA2D72B295A4B8300A93E30 /* XCRemoteSwiftPackageReference "swift-argument-parser" */;
@@ -407,6 +478,11 @@
 		8CB16790295BDB5200D3E2C5 /* PythonSwiftLinkParser */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = PythonSwiftLinkParser;
+		};
+		8CEF94842971F216009FCD22 /* SwiftPrettyPrint */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8CEF94832971F216009FCD22 /* XCRemoteSwiftPackageReference "SwiftPrettyPrint" */;
+			productName = SwiftPrettyPrint;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
