@@ -34,7 +34,7 @@ extension PythonSwiftLinkCLI {
                 try await checkSwiftTools()
                 
                 guard let project = currentProject else { return }
-                
+                PythonHandler.shared.defaultRunning.toggle()
                 
                 let folder_path: Path
                 switch library {

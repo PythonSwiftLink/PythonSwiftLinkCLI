@@ -44,8 +44,11 @@ extension ProjectFile {
     }
     
     func write() throws {
-        if let p_url = currentProject?.path_url {
-            try data().write(to: p_url.appendingPathComponent("project.json"))
+        if let p_url = currentProject?.project_dir {
+            
+            try (p_url + "project.json" ).write("")
+            
+            //try data().write(to: p_url.appendingPathComponent("project.json"))
         }
         
     }
@@ -100,7 +103,7 @@ extension URL {
 class FolderSettings: Codable {
     
     static func load(url: URL) throws -> FolderSettings {
-        print(url)
+        //print(url)
         var file: FileWrapper
         if url.exist {
             file = try FileWrapper(url: url)
@@ -148,8 +151,8 @@ class FolderSettings: Codable {
     }
     
     static public func update(withKey key: FolderSettings.Keys, value: String) throws {
-        let url = ROOT_PATH.appendingPathComponent("settings.json")
-        let settings = try Self.load(url: url)
+        let url = ROOT_PATH + ("settings.json")
+        let settings = try Self.load(url: url.url)
         
         switch key {
             
@@ -159,7 +162,7 @@ class FolderSettings: Codable {
             settings.site_packages_path = .init(fileURLWithPath: value)
         }
         
-        try settings.fileWrapper().write(to: url, originalContentsURL: nil)
+        try settings.fileWrapper().write(to: url.url, originalContentsURL: nil)
         
     }
 }

@@ -23,23 +23,42 @@ extension PythonSwiftLinkCLI {
             
             func run() async throws {
                 guard let project = currentProject else {
-                    print("no project selected")
-                    print("add flag -p <name of project>")
+                    DEBUG_PRINT("no project selected")
+                    DEBUG_PRINT("add flag -p <name of project>")
                     return
                 }
                 
-                try await project.mod_newXCProj(system_files: SYSTEM_FILES)
+                try await project.mod_newXCProj(root: ROOT_PATH )
 
                 try ProjectFile(name: String(project.name), depends: []).write()
             }
         }
         
+        
+        
         struct Update: AsyncParsableCommand {
             
-            @Argument() var project: String
+            //@Argument() var project: String
             
             func run() async throws {
-                try PythonSwiftLink_Project.updateWrapperImports(path: project)
+                print("updating")
+                
+                guard let project = currentProject else { return }
+                PythonHandler.shared.defaultRunning.toggle()
+                
+                let sources = project.wrapper_sources
+                let builds = project.wrapper_builds
+                try await sources
+                    .filter({s in builds.contains(where: {b in s.lastComponentWithoutExtension == b.lastComponentWithoutExtension })})
+                    .asyncCompactForEach(handleWrapperFilePW) { (name: String, swift: Data, site_file: Data) in
+                        try! (builds + "\(name).swift").write(swift)
+                        if let site = site_packages_folder {
+                            try! (site + "\(name).py").write(site_file)
+                        }
+                    }
+                    
+                
+                //try project.updateWrapperImports()
             }
         }
         
@@ -51,7 +70,7 @@ extension PythonSwiftLinkCLI {
             func run() async throws {
                 
                 guard let project = currentProject else { return }
-                
+                PythonHandler.shared.defaultRunning.toggle()
                 
                 try await handleWrapper(src: .init(url: .init(fileURLWithPath: source)), destination_folder: .init(fileURLWithPath: ""), python_init: true)
                 
@@ -60,12 +79,13 @@ extension PythonSwiftLinkCLI {
                 let dst = project.wrapper_sources + "\(_file).py"
                 try await copyItem(forced: source, to: dst.string)
                 let builds = project.wrapper_builds
+                
                 //try await handleWrapperFile(source_path: dst.url, destination_folder: builds.url, python_init: true)
-                project.xc_handler.load_project()
-                if let group = project.xc_handler.get_or_create_group("PythonSwiftWrappers") {
-                    try project.xc_handler.add_file(path: builds + "\(_file).swift", group: group)
+                project.load_project()
+                if let group = project.get_or_create_group("PythonSwiftWrappers") {
+                    try project.add_file(path: builds + "\(_file).swift", group: group)
                 }
-                project.xc_handler.save()
+                project.save()
                 
                 //try PythonSwiftLink_Project.updateWrapperImports(path: project)
             }
@@ -75,14 +95,11 @@ extension PythonSwiftLinkCLI {
             
             
             func run() async throws {
+                print("resyncing")
                 guard let project = currentProject else { return }
                 //let _proj_dir = project.xc_handler.project_dir
-                
-                PythonHandler.shared.start(
-                    stdlib: APP_FOLDER.appendingPathComponent("python-stdlib").path,
-                    app_packages: PYTHON_EXTRA_MODULES,
-                    debug: false
-                )
+                print("resync", currentProject?.project_dir)
+                PythonHandler.shared.defaultRunning.toggle()
                 let wrapper_builds = project.wrapper_builds
                 
                 if !FileManager.default.fileExists(atPath: wrapper_builds.string) {
@@ -102,18 +119,18 @@ extension PythonSwiftLinkCLI {
                 }
                 
                 let xc = project
-                xc.xc_handler.load_project()
+                xc.load_project()
                 
-                if let group = xc.xc_handler.get_or_create_group("PythonSwiftWrappers") {
+                if let group = xc.get_or_create_group("PythonSwiftWrappers") {
                     
                     try FileManager.default.contentsOfDirectory(at: wrapper_builds.url, includingPropertiesForKeys: nil).forEach { url in
                         if url.lastPathComponent == ".DS_Store" { return }
-                        try xc.xc_handler.add_file(path: url.Path, group: group)
+                        try xc.add_file(path: url.Path, group: group)
                     }
                     
                 }
                 
-                xc.xc_handler.save()
+                xc.save()
                 
                 try xc.updateWrapperImports()
             }

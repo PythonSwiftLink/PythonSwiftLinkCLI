@@ -10,7 +10,13 @@ import Foundation
 import PythonSwiftLinkParser
 import ArgumentParser
 import PathKit
-import WrapperPackageHandler
+
+
+func DEBUG_PRINT(_ items: Any..., separator: String = " ", terminator: String = "\n") {
+    #if DEBUG
+    print(items, separator: separator, terminator: terminator)
+    #endif
+}
 
 extension String {
     var fileWrapper: FileWrapper? {
@@ -26,15 +32,21 @@ let EXE_PATH = Bundle.main.executableURL!.deletingLastPathComponent()
 
 let APP_FOLDER = FileManager.default.urls(for: .applicationDirectory, in: .localDomainMask).first!.appendingPathComponent("PythonSwiftLinkCLI")
 
-var ROOT_PATH = URL(fileURLWithPath: FileManager.default.currentDirectoryPath)
-var SYSTEM_FILES: URL {  ROOT_PATH.appendingPathComponent("system_files") }
-var SWIFT_TOOLS: Path { SYSTEM_FILES.Path + "SwiftTools" }
+//var ROOT_PATH = URL(fileURLWithPath: FileManager.default.currentDirectoryPath)
+var ROOT_PATH = Path.current
+//var SYSTEM_FILES: URL {  ROOT_PATH.appendingPathComponent("system_files") }
+var SYSTEM_FILES: Path {  ROOT_PATH + "system_files" }
+var SWIFT_TOOLS: Path { SYSTEM_FILES + "SwiftTools" }
 
 var env_var = "dont suck?"
 
 
 var site_packages_folder: Path? {
-    try? FolderSettings.load(url: ROOT_PATH.appendingPathComponent("settings.json")).site_packages_path?.Path
+    if let project = currentProject {
+        
+        return try? FolderSettings.load(url: (project.project_dir.parent() + "settings.json").url ).site_packages_path?.Path
+    }
+    return try? FolderSettings.load(url: (ROOT_PATH + "settings.json").url ).site_packages_path?.Path
 }
 
 
@@ -76,13 +88,13 @@ func handleWrapperFileEx(file: FileWrapperEx) async throws -> (swift: FileWrappe
 
 
 func handleWrapperFilePW(file: Path) async throws -> (name: String,swift: Data, site_file: Data)? {
-    print(file)
+    //DEBUG_PRINT(file)
     guard file.extension == "py" else { return nil }
     let filename = file.lastComponentWithoutExtension
 
     guard let data = try? file.read() , let source_code = String(data: data, encoding: .utf8) else { throw Foundation.CocoaError(.fileReadInapplicableStringEncoding) }
     let py_file: Data = try generatePurePyFile(data: data)
-    
+    print("handleWrapperFilePW data size:", data.count)
     let module = await WrapModule(fromAst: filename, string: source_code)
 
     if let wrapper = module.pyswift_code.data(using: .utf8) {
@@ -95,7 +107,7 @@ func handleWrapperFilePW(file: Path) async throws -> (name: String,swift: Data, 
 
 func handleWrapperFile(file: FileWrapper) async throws -> (swift: FileWrapper, site_file: FileWrapper) {
     let filename = Path(file.filename ?? "none").lastComponentWithoutExtension
-    print("input: \(filename)")
+    DEBUG_PRINT("input: \(filename)")
     
     let _file: FileWrapper = file.isSymbolicLink ? try .init(url: file.symbolicLinkDestinationURL!) : file
     
@@ -120,17 +132,17 @@ func handleWrapper(src: FileWrapper, destination_folder: URL , python_init: Bool
     
     
     func handleFolder(folder: FileWrapper, dst: URL) {
-        if let pack = folder.wrapPackage {
-      
-            if let s = folder.sourceFiles.first {
-                //generatePurePyFile(data: s.regularFileContents)
-            }
-            return
-        }
-        for (key,file) in folder.fileWrappers ?? [:] {
-            if file.isDirectory { handleFolder(folder: file, dst: dst)}
-            else if file.isRegularFile { continue }
-        }
+//        if let pack = folder.wrapPackage {
+//      
+//            if let s = folder.sourceFiles.first {
+//                //generatePurePyFile(data: s.regularFileContents)
+//            }
+//            return
+//        }
+//        for (key,file) in folder.fileWrappers ?? [:] {
+//            if file.isDirectory { handleFolder(folder: file, dst: dst)}
+//            else if file.isRegularFile { continue }
+//        }
 //        guard let fname = folder.filename, let files = folder.fileWrappers else { return }
 //        if files.keys.contains("package.json") {
 //
@@ -148,7 +160,7 @@ func handleWrapper(src: FileWrapper, destination_folder: URL , python_init: Bool
         guard let _filename = fname.split(separator: ".").first else { return }
         let filename = String(_filename)
         let dst =  destination_folder.appendingPathComponent("\(filename).swift")
-        print("output: \(dst.path)")
+        DEBUG_PRINT("output: \(dst.path)")
         //create wrap module from .py
         let module = await WrapModule(fromAst: filename, string: source)
         // store .pyswift_code to file
@@ -160,10 +172,10 @@ func handleWrapper(src: FileWrapper, destination_folder: URL , python_init: Bool
         case let f where f.isDirectory == true:
             handleFolder(folder: f, dst: destination_folder)
         case let f where f.isRegularFile == true:
-            print(f.preferredFilename)
+            DEBUG_PRINT(f.preferredFilename)
             fatalError()
         case let f where f.isSymbolicLink == true:
-            print(f.preferredFilename)
+            DEBUG_PRINT(f.preferredFilename)
             fatalError()
         default:
             return
@@ -184,26 +196,37 @@ func handleWrapper(src: FileWrapper, destination_folder: URL , python_init: Bool
 let app_ver = 0.1
 let app_build = 1000
 
-var currentProject: PythonSwiftLink_Project? = nil
+var currentProject: PySwiftProject? = nil
 
 @main
 struct PythonSwiftLinkCLI: AsyncParsableCommand {
+    init() {
+//        try await checkSwiftTools()
+//        PythonHandler.shared.defaultRunning.toggle()
+    }
+    
     
     static let configuration = CommandConfiguration(
         abstract: "PythonSwiftLinkCLI - version: \(app_ver) build: \(app_build)",
         version: "\(app_ver)",
-        subcommands: [Config.self, Project.self, SwiftTools.self].sorted(by: {$0._commandName < $1._commandName})
+        subcommands: [Config.self, Project.self, SwiftTools.self, Helpers.self].sorted(by: {$0._commandName < $1._commandName})
     )
     
-    @Option(name: .shortAndLong, transform: { p -> URL? in
-        let url = URL(fileURLWithPath: p)
-        ROOT_PATH = url
-        return url
+    @Option(name: .shortAndLong, transform: { p -> Path? in
+        //let url = URL(fileURLWithPath: p)
+        ROOT_PATH = .init(p)
+        return ROOT_PATH
     }) var root
     
 
-    @Option(name: .shortAndLong, transform: PythonSwiftLink_Project.fromString)
-    var project: PythonSwiftLink_Project?
+    //@Option(name: .shortAndLong, transform: PySwiftProject.fromString)
+    @Option(name: .shortAndLong) var project: PySwiftProject?
+    
+    enum CodingKeys: CodingKey {
+        case root
+        case project
+    }
+    
     
    
 }
@@ -211,6 +234,9 @@ struct PythonSwiftLinkCLI: AsyncParsableCommand {
 
 extension PythonSwiftLinkCLI {
     
+    
+    
+
 //    struct Build: AsyncParsableCommand {
 //        static let configuration = CommandConfiguration(
 //            abstract: "Build Wrapper Files",
@@ -247,9 +273,10 @@ extension PythonSwiftLinkCLI {
 
 //PythonSwiftLinkCLI.main()
 func checkSwiftTools()  async throws {
-    let path = SWIFT_TOOLS.string
-    if !FileManager.default.fileExists(atPath: path) {
-         print("swift tools missing cloning.....")
-        try await gitAsync(clone: ["https://github.com/PythonSwiftLink/SwiftTools"], target: path)
+    let path = SWIFT_TOOLS
+    if !path.exists {
+        try path.mkpath()
+         DEBUG_PRINT("swift tools missing cloning.....")
+        try await gitAsync(clone: ["https://github.com/PythonSwiftLink/SwiftTools"], target: path.string)
     }
 }
