@@ -70,7 +70,7 @@ func handleWrapperFileEx(key: String, value: FileWrapperEx) async throws -> (swi
 var PYTHON_EXTRA_MODULES : [String] {
     [
         APP_FOLDER.appendingPathComponent("python-extra").path,
-        (SWIFT_TOOLS ).string
+        (SWIFT_TOOLS + "src" ).string
     ]
 }
 
@@ -94,8 +94,7 @@ func handleWrapperFilePW(file: Path) async throws -> (name: String,swift: Data, 
 
     guard let data = try? file.read() , let source_code = String(data: data, encoding: .utf8) else { throw Foundation.CocoaError(.fileReadInapplicableStringEncoding) }
     let py_file: Data = try generatePurePyFile(data: data)
-    print("handleWrapperFilePW data size:", data.count)
-    let module = await WrapModule(fromAst: filename, string: source_code)
+    let module = await WrapModule(fromAst: filename, string: source_code, swiftui: SWIFTUI_MODE)
 
     if let wrapper = module.pyswift_code.data(using: .utf8) {
         return (filename,wrapper,py_file)
@@ -193,11 +192,11 @@ func handleWrapper(src: FileWrapper, destination_folder: URL , python_init: Bool
     
 }
 
-let app_ver = 0.1
-let app_build = 1000
+let app_ver = "0.0.4"
+let app_build = 1100
 
 var currentProject: PySwiftProject? = nil
-
+public var SWIFTUI_MODE = false
 @main
 struct PythonSwiftLinkCLI: AsyncParsableCommand {
     init() {
@@ -209,23 +208,10 @@ struct PythonSwiftLinkCLI: AsyncParsableCommand {
     static let configuration = CommandConfiguration(
         abstract: "PythonSwiftLinkCLI - version: \(app_ver) build: \(app_build)",
         version: "\(app_ver)",
-        subcommands: [Config.self, Project.self, SwiftTools.self, Helpers.self].sorted(by: {$0._commandName < $1._commandName})
+        subcommands: [Kivy.self, SwiftUi.self].sorted(by: {$0._commandName < $1._commandName})
     )
     
-    @Option(name: .shortAndLong, transform: { p -> Path? in
-        //let url = URL(fileURLWithPath: p)
-        ROOT_PATH = .init(p)
-        return ROOT_PATH
-    }) var root
     
-
-    //@Option(name: .shortAndLong, transform: PySwiftProject.fromString)
-    @Option(name: .shortAndLong) var project: PySwiftProject?
-    
-    enum CodingKeys: CodingKey {
-        case root
-        case project
-    }
     
     
    
@@ -237,37 +223,63 @@ extension PythonSwiftLinkCLI {
     
     
 
-//    struct Build: AsyncParsableCommand {
-//        static let configuration = CommandConfiguration(
-//            abstract: "Build Wrapper Files",
-//            subcommands: [File.self],
-//            defaultSubcommand: File.self
-//
-//        )
-//
-//        struct File: AsyncParsableCommand {
-//            @Argument() var source_path: String
-//            @Argument() var destination_folder: String
-////            @Flag(name: .shortAndLong, help: "Debug Mode")
-////            var debug = false
-//
-////            @Option(help: "")
-////            var autodoc: String?
-//
-//            func run() async throws {
-//                //try await handleWrapperFile(file: <#T##FileWrapper#>, destination_folder: <#T##Path#>, python_init: <#T##Bool#>)
-//                //try await handleWrapperFile(source_path: .init(fileURLWithPath: source_path), destination_folder: .init(fileURLWithPath: destination_folder), python_init: true)
-//            }
-//        }
-//
-//    }
+    struct SwiftUi: AsyncParsableCommand {
+        static let configuration = CommandConfiguration(
+            abstract: "Wrapper tools for SwiftUI.",
+            subcommands: [Update.self].sorted(by: {$0._commandName < $1._commandName})
+            //defaultSubcommand: Setup.self
+            
+        )
+        
+        struct Update: AsyncParsableCommand {
+            
+            //@Argument() var project: String
+            @Argument() var source: Path
+            @Argument() var destination: Path
+            @Argument() var py_path: Path
+            
+            func run() async throws {
+                print("updating")
+                SWIFTUI_MODE = true
+                PythonHandler.shared.defaultRunning.toggle()
+               
+                try await source
+                    //.filter({s in destination.contains(where: {b in s.lastComponentWithoutExtension == b.lastComponentWithoutExtension })})
+                    .asyncCompactForEach(handleWrapperFilePW) { (name: String, swift: Data, site_file: Data) in
+                        try (destination + "\(name).swift").write(swift)
+                        
+                        try (py_path + "\(name).py").write(site_file)
+                        
+                    }
+                
+                
+                //try project.updateWrapperImports()
+            }
+        }
+        
+    }
     
-    
-  
-    
-  
-    
-    
+    struct Kivy: AsyncParsableCommand {
+        static let configuration = CommandConfiguration(
+            abstract: "Wrapper tools for Kivy.",
+            subcommands: [Config.self, Project.self, SwiftTools.self, Helpers.self].sorted(by: {$0._commandName < $1._commandName})
+            //defaultSubcommand: Setup.self
+            
+        )
+        @Option(name: .shortAndLong, transform: { p -> Path? in
+            ROOT_PATH = .init(p)
+            return ROOT_PATH
+        }) var root
+        
+        @Option(name: .shortAndLong) var project: PySwiftProject?
+        
+        enum CodingKeys: CodingKey {
+            case root
+            case project
+        }
+        
+        
+    }
     
 }
 

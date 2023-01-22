@@ -84,7 +84,7 @@ extension WorkDirectory {
             \(python) -m venv venv
             . venv/bin/activate
             pip install Cython==0.29.28
-            pip install kivy-ios
+            pip install git+https://github.com/kivy/kivy-ios
             toolchain build python3
             toolchain build kivy
             \(recipe_installs)
