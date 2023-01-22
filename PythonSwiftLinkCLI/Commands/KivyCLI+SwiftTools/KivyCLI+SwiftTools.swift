@@ -9,7 +9,7 @@ import ArgumentParser
 import PathKit
 
 
-extension PythonSwiftLinkCLI {
+extension PythonSwiftLinkCLI.Kivy {
     
     struct SwiftTools: AsyncParsableCommand {
         static let configuration = CommandConfiguration(
@@ -69,7 +69,6 @@ extension PythonSwiftLinkCLI {
             @Flag() var library: Library
             
             func run() async throws {
-                print("list:")
                 try await checkSwiftTools()
             }
         }

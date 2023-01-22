@@ -9,7 +9,7 @@ import ArgumentParser
 import PathKit
 
 
-extension PythonSwiftLinkCLI {
+extension PythonSwiftLinkCLI.Kivy {
     struct Helpers: AsyncParsableCommand {
         static let configuration = CommandConfiguration(
             abstract: "Helpers to make life easier.",

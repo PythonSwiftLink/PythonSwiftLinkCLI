@@ -8,7 +8,7 @@ import ArgumentParser
 import PathKit
 
 
-extension PythonSwiftLinkCLI {
+extension PythonSwiftLinkCLI.Kivy {
     
     struct Project: AsyncParsableCommand {
         static let configuration = CommandConfiguration(
@@ -98,7 +98,6 @@ extension PythonSwiftLinkCLI {
                 print("resyncing")
                 guard let project = currentProject else { return }
                 //let _proj_dir = project.xc_handler.project_dir
-                print("resync", currentProject?.project_dir)
                 PythonHandler.shared.defaultRunning.toggle()
                 let wrapper_builds = project.wrapper_builds
                 

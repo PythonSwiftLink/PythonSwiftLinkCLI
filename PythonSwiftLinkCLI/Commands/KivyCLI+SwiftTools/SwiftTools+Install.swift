@@ -39,12 +39,12 @@ extension JSON: ConvertibleFromPython {
     
 }
 
-extension PythonSwiftLinkCLI.SwiftTools {
+extension PythonSwiftLinkCLI.Kivy.SwiftTools {
     
     
     struct Install: AsyncParsableCommand {
         
-        @Flag var library: PythonSwiftLinkCLI.SwiftTools.Library
+        @Flag var library: PythonSwiftLinkCLI.Kivy.SwiftTools.Library
         //@Argument() var package: String
         @Argument() var packages: [String] = []
         
