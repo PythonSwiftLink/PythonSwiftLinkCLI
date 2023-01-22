@@ -9,11 +9,13 @@
 /* Begin PBXBuildFile section */
 		8C56494C296C43CE0074C10B /* ProjectFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C56494B296C43CE0074C10B /* ProjectFile.swift */; };
 		8C56495A296D82310074C10B /* AstorWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C564959296D82310074C10B /* AstorWrapper.swift */; };
+		8C60E94B297DDA30009F3FAC /* WrapPackage+Build.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C60E94A297DDA30009F3FAC /* WrapPackage+Build.swift */; };
+		8C60E94D297DDA76009F3FAC /* PythonHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C60E94C297DDA76009F3FAC /* PythonHandler.swift */; };
+		8C60E94F297DDBED009F3FAC /* WrapPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C60E94E297DDBED009F3FAC /* WrapPackage.swift */; };
 		8C6BB82B295AF76B00AC0990 /* XcodeProj in Frameworks */ = {isa = PBXBuildFile; productRef = 8C6BB82A295AF76B00AC0990 /* XcodeProj */; };
 		8C6BB833295AFFF300AC0990 /* CodeTemplates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6BB832295AFFF300AC0990 /* CodeTemplates.swift */; };
 		8C6BB835295B1B7F00AC0990 /* version.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6BB834295B1B7F00AC0990 /* version.swift */; };
-		8C7E7BA82974189200073B08 /* WrapPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7E7BA72974189200073B08 /* WrapPackage.swift */; };
-		8C7E7BAA2974189B00073B08 /* WrapPackage+Build.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7E7BA92974189B00073B08 /* WrapPackage+Build.swift */; };
+		8C7E7BA82974189200073B08 /* PythonSwiftLinkCLI in Sources */ = {isa = PBXBuildFile; fileRef = 8C7E7BA72974189200073B08 /* PythonSwiftLinkCLI */; };
 		8C7E7BAC29744A4600073B08 /* WrapPackage+Import.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7E7BAB29744A4600073B08 /* WrapPackage+Import.swift */; };
 		8C7E7BAE29747D0300073B08 /* WrapContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7E7BAD29747D0300073B08 /* WrapContainer.swift */; };
 		8C7E7BB029748E1A00073B08 /* WrapContainer+Import.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7E7BAF29748E1A00073B08 /* WrapContainer+Import.swift */; };
@@ -25,7 +27,6 @@
 		8C979DF9297DD6C800862213 /* PythonSwiftLinkParser in Frameworks */ = {isa = PBXBuildFile; productRef = 8C979DF8297DD6C800862213 /* PythonSwiftLinkParser */; };
 		8CA2D71B295A42FA00A93E30 /* cli.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA2D71A295A42FA00A93E30 /* cli.swift */; };
 		8CA2D72D295A4B8300A93E30 /* ArgumentParser in Frameworks */ = {isa = PBXBuildFile; productRef = 8CA2D72C295A4B8300A93E30 /* ArgumentParser */; };
-		8CA2D730295A572D00A93E30 /* PythonHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA2D72F295A572C00A93E30 /* PythonHandler.swift */; };
 		8CA2D735295A6DCD00A93E30 /* CreateVenv.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA2D734295A6DCD00A93E30 /* CreateVenv.swift */; };
 		8CA2D73C295AF5B000A93E30 /* PySwiftProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA2D73B295AF5B000A93E30 /* PySwiftProject.swift */; };
 		8CEF946D297035C5009FCD22 /* FileWrapper+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEF946C297035C5009FCD22 /* FileWrapper+Extensions.swift */; };
@@ -54,12 +55,14 @@
 /* Begin PBXFileReference section */
 		8C56494B296C43CE0074C10B /* ProjectFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectFile.swift; sourceTree = "<group>"; };
 		8C564959296D82310074C10B /* AstorWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstorWrapper.swift; sourceTree = "<group>"; };
-		8C6BB827295AF68700AC0990 /* PBXProjWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PBXProjWrapper.swift; path = ../../PythonSwiftLink/PythonSwiftLink/PBXProjWrapper.swift; sourceTree = "<group>"; };
-		8C6BB830295AFDB300AC0990 /* extension_helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = extension_helpers.swift; path = ../../PythonSwiftLink/PythonSwiftLink/extension_helpers.swift; sourceTree = "<group>"; };
-		8C6BB832295AFFF300AC0990 /* CodeTemplates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CodeTemplates.swift; path = ../../PythonSwiftLink/PythonSwiftLink/DB_files/CodeTemplates.swift; sourceTree = "<group>"; };
-		8C6BB834295B1B7F00AC0990 /* version.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = version.swift; path = ../../PythonSwiftLink/PythonSwiftLink/version.swift; sourceTree = "<group>"; };
-		8C7E7BA72974189200073B08 /* WrapPackage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WrapPackage.swift; path = ../../WrapperPackageHandler/Sources/WrapperPackageHandler/WrapPackage.swift; sourceTree = "<group>"; };
-		8C7E7BA92974189B00073B08 /* WrapPackage+Build.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "WrapPackage+Build.swift"; path = "../../WrapperPackageHandler/Sources/WrapperPackageHandler/WrapPackage+Build.swift"; sourceTree = "<group>"; };
+		8C60E94A297DDA30009F3FAC /* WrapPackage+Build.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "WrapPackage+Build.swift"; path = "../../../../../../Volumes/WorkSSD/xcode projects/PythonSwiftLinkCLI/PythonSwiftLinkCLI/WrapPackage+Build.swift"; sourceTree = "<group>"; };
+		8C60E94C297DDA76009F3FAC /* PythonHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PythonHandler.swift; path = "../../../../../../Volumes/WorkSSD/xcode projects/PythonSwiftLinkCLI/PythonSwiftLinkCLI/PythonHandler.swift"; sourceTree = "<group>"; };
+		8C60E94E297DDBED009F3FAC /* WrapPackage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WrapPackage.swift; path = "../../../../../../Volumes/WorkSSD/xcode projects/PythonSwiftLinkCLI/PythonSwiftLinkCLI/WrapPackage.swift"; sourceTree = "<group>"; };
+		8C6BB827295AF68700AC0990 /* PBXProjWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PBXProjWrapper.swift; sourceTree = "<group>"; };
+		8C6BB830295AFDB300AC0990 /* extension_helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = extension_helpers.swift; sourceTree = "<group>"; };
+		8C6BB832295AFFF300AC0990 /* CodeTemplates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CodeTemplates.swift; path = /Users/musicmaker/Documents/GitHub/PythonSwiftLinkCLI/PythonSwiftLinkCLI/CodeTemplates.swift; sourceTree = "<absolute>"; };
+		8C6BB834295B1B7F00AC0990 /* version.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = version.swift; sourceTree = "<group>"; };
+		8C7E7BA72974189200073B08 /* PythonSwiftLinkCLI */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = folder; name = PythonSwiftLinkCLI; path = /Users/musicmaker/Documents/GitHub/PythonSwiftLinkCLI/PythonSwiftLinkCLI; sourceTree = "<absolute>"; };
 		8C7E7BAB29744A4600073B08 /* WrapPackage+Import.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WrapPackage+Import.swift"; sourceTree = "<group>"; };
 		8C7E7BAD29747D0300073B08 /* WrapContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrapContainer.swift; sourceTree = "<group>"; };
 		8C7E7BAF29748E1A00073B08 /* WrapContainer+Import.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WrapContainer+Import.swift"; sourceTree = "<group>"; };
@@ -68,10 +71,9 @@
 		8C7E7BBD29789F8F00073B08 /* KivyCLI+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KivyCLI+Helpers.swift"; sourceTree = "<group>"; };
 		8CA2D717295A42FA00A93E30 /* PythonSwiftLinkCLI */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = PythonSwiftLinkCLI; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CA2D71A295A42FA00A93E30 /* cli.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cli.swift; sourceTree = "<group>"; };
-		8CA2D72F295A572C00A93E30 /* PythonHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PythonHandler.swift; path = ../../PythonSwiftLink/PythonSwiftLink/PythonHandler.swift; sourceTree = "<group>"; };
 		8CA2D731295A597000A93E30 /* PythonSwiftLinkCLI.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PythonSwiftLinkCLI.entitlements; sourceTree = "<group>"; };
 		8CA2D734295A6DCD00A93E30 /* CreateVenv.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateVenv.swift; sourceTree = "<group>"; };
-		8CA2D73B295AF5B000A93E30 /* PySwiftProject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PySwiftProject.swift; path = ../PythonSwiftLink/PythonSwiftLink/PySwiftProject.swift; sourceTree = SOURCE_ROOT; };
+		8CA2D73B295AF5B000A93E30 /* PySwiftProject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PySwiftProject.swift; path = PythonSwiftLinkCLI/PySwiftProject.swift; sourceTree = SOURCE_ROOT; };
 		8CEF946C297035C5009FCD22 /* FileWrapper+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileWrapper+Extensions.swift"; sourceTree = "<group>"; };
 		8CEF946E29703829009FCD22 /* Sequence+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sequence+Extension.swift"; sourceTree = "<group>"; };
 		8CEF947129705303009FCD22 /* FileWrapperEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileWrapperEx.swift; sourceTree = "<group>"; };
@@ -125,13 +127,14 @@
 				8CA2D734295A6DCD00A93E30 /* CreateVenv.swift */,
 				8C7E7BAD29747D0300073B08 /* WrapContainer.swift */,
 				8C7E7BAF29748E1A00073B08 /* WrapContainer+Import.swift */,
-				8C7E7BA72974189200073B08 /* WrapPackage.swift */,
+				8C7E7BA72974189200073B08 /* PythonSwiftLinkCLI */,
 				8C7E7BAB29744A4600073B08 /* WrapPackage+Import.swift */,
-				8C7E7BA92974189B00073B08 /* WrapPackage+Build.swift */,
-				8CA2D72F295A572C00A93E30 /* PythonHandler.swift */,
 				8CEF948629720F09009FCD22 /* PythonDecoder.swift */,
+				8C60E94A297DDA30009F3FAC /* WrapPackage+Build.swift */,
 				8C564959296D82310074C10B /* AstorWrapper.swift */,
+				8C60E94C297DDA76009F3FAC /* PythonHandler.swift */,
 				8CA2D73B295AF5B000A93E30 /* PySwiftProject.swift */,
+				8C60E94E297DDBED009F3FAC /* WrapPackage.swift */,
 				8C7E7BB12974D28B00073B08 /* PySwiftProject+Plist.swift */,
 				8C6BB827295AF68700AC0990 /* PBXProjWrapper.swift */,
 				8C6BB830295AFDB300AC0990 /* extension_helpers.swift */,
@@ -257,18 +260,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C60E94F297DDBED009F3FAC /* WrapPackage.swift in Sources */,
 				8CEF947229705303009FCD22 /* FileWrapperEx.swift in Sources */,
 				8C6BB833295AFFF300AC0990 /* CodeTemplates.swift in Sources */,
-				8C7E7BA82974189200073B08 /* WrapPackage.swift in Sources */,
+				8C7E7BA82974189200073B08 /* PythonSwiftLinkCLI in Sources */,
 				8C7E7BAE29747D0300073B08 /* WrapContainer.swift in Sources */,
 				8C7E7BBE29789F8F00073B08 /* KivyCLI+Helpers.swift in Sources */,
 				8C7E7BB22974D28B00073B08 /* PySwiftProject+Plist.swift in Sources */,
-				8CA2D730295A572D00A93E30 /* PythonHandler.swift in Sources */,
 				8C7E7BBA2976106000073B08 /* ExpressibleByArgument+Ext.swift in Sources */,
 				8CEF947B29707C60009FCD22 /* KivyCLI+Config.swift in Sources */,
 				8CEF948029707D45009FCD22 /* SwiftTools+Install.swift in Sources */,
 				8C7E7BB829760FE600073B08 /* extension_helpers.swift in Sources */,
-				8C7E7BAA2974189B00073B08 /* WrapPackage+Build.swift in Sources */,
 				8CEF947D29707CC0009FCD22 /* KivyCLI+SwiftTools.swift in Sources */,
 				8CEF947929707BAE009FCD22 /* KivyCLI+Project.swift in Sources */,
 				8CEF946D297035C5009FCD22 /* FileWrapper+Extensions.swift in Sources */,
@@ -280,8 +282,10 @@
 				8C56494C296C43CE0074C10B /* ProjectFile.swift in Sources */,
 				8CEF94742970533B009FCD22 /* FileWrapperEx+Extensions.swift in Sources */,
 				8C7E7BAC29744A4600073B08 /* WrapPackage+Import.swift in Sources */,
+				8C60E94B297DDA30009F3FAC /* WrapPackage+Build.swift in Sources */,
 				8C7E7BB029748E1A00073B08 /* WrapContainer+Import.swift in Sources */,
 				8CA2D73C295AF5B000A93E30 /* PySwiftProject.swift in Sources */,
+				8C60E94D297DDA76009F3FAC /* PythonHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
