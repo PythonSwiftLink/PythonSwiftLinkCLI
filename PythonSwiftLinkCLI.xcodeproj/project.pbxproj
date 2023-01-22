@@ -15,7 +15,6 @@
 		8C6BB82B295AF76B00AC0990 /* XcodeProj in Frameworks */ = {isa = PBXBuildFile; productRef = 8C6BB82A295AF76B00AC0990 /* XcodeProj */; };
 		8C6BB833295AFFF300AC0990 /* CodeTemplates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6BB832295AFFF300AC0990 /* CodeTemplates.swift */; };
 		8C6BB835295B1B7F00AC0990 /* version.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6BB834295B1B7F00AC0990 /* version.swift */; };
-		8C7E7BA82974189200073B08 /* PythonSwiftLinkCLI in Sources */ = {isa = PBXBuildFile; fileRef = 8C7E7BA72974189200073B08 /* PythonSwiftLinkCLI */; };
 		8C7E7BAC29744A4600073B08 /* WrapPackage+Import.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7E7BAB29744A4600073B08 /* WrapPackage+Import.swift */; };
 		8C7E7BAE29747D0300073B08 /* WrapContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7E7BAD29747D0300073B08 /* WrapContainer.swift */; };
 		8C7E7BB029748E1A00073B08 /* WrapContainer+Import.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7E7BAF29748E1A00073B08 /* WrapContainer+Import.swift */; };
@@ -62,7 +61,6 @@
 		8C6BB830295AFDB300AC0990 /* extension_helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = extension_helpers.swift; sourceTree = "<group>"; };
 		8C6BB832295AFFF300AC0990 /* CodeTemplates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CodeTemplates.swift; path = /Users/musicmaker/Documents/GitHub/PythonSwiftLinkCLI/PythonSwiftLinkCLI/CodeTemplates.swift; sourceTree = "<absolute>"; };
 		8C6BB834295B1B7F00AC0990 /* version.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = version.swift; sourceTree = "<group>"; };
-		8C7E7BA72974189200073B08 /* PythonSwiftLinkCLI */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = folder; name = PythonSwiftLinkCLI; path = /Users/musicmaker/Documents/GitHub/PythonSwiftLinkCLI/PythonSwiftLinkCLI; sourceTree = "<absolute>"; };
 		8C7E7BAB29744A4600073B08 /* WrapPackage+Import.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WrapPackage+Import.swift"; sourceTree = "<group>"; };
 		8C7E7BAD29747D0300073B08 /* WrapContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrapContainer.swift; sourceTree = "<group>"; };
 		8C7E7BAF29748E1A00073B08 /* WrapContainer+Import.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WrapContainer+Import.swift"; sourceTree = "<group>"; };
@@ -127,7 +125,6 @@
 				8CA2D734295A6DCD00A93E30 /* CreateVenv.swift */,
 				8C7E7BAD29747D0300073B08 /* WrapContainer.swift */,
 				8C7E7BAF29748E1A00073B08 /* WrapContainer+Import.swift */,
-				8C7E7BA72974189200073B08 /* PythonSwiftLinkCLI */,
 				8C7E7BAB29744A4600073B08 /* WrapPackage+Import.swift */,
 				8CEF948629720F09009FCD22 /* PythonDecoder.swift */,
 				8C60E94A297DDA30009F3FAC /* WrapPackage+Build.swift */,
@@ -263,7 +260,6 @@
 				8C60E94F297DDBED009F3FAC /* WrapPackage.swift in Sources */,
 				8CEF947229705303009FCD22 /* FileWrapperEx.swift in Sources */,
 				8C6BB833295AFFF300AC0990 /* CodeTemplates.swift in Sources */,
-				8C7E7BA82974189200073B08 /* PythonSwiftLinkCLI in Sources */,
 				8C7E7BAE29747D0300073B08 /* WrapContainer.swift in Sources */,
 				8C7E7BBE29789F8F00073B08 /* KivyCLI+Helpers.swift in Sources */,
 				8C7E7BB22974D28B00073B08 /* PySwiftProject+Plist.swift in Sources */,
