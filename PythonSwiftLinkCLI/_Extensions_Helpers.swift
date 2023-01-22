@@ -113,39 +113,39 @@ func copyCheaders(from: [URL], to: String, force: Bool = false) {
     
 }
 
-func deleteCheaders(names: [String], to: String, force: Bool = false) {
-    let dst_root = URL(fileURLWithPath: to)
-    for name in names {
-        //var file = url.lastPathComponent
-        //file.removeFirst()
-        let dst = dst_root.appendingPathComponent(name, isDirectory: false)
-        try! FM.removeItem(at: dst)
-    }
-}
+//func deleteCheaders(names: [String], to: String, force: Bool = false) {
+//    let dst_root = URL(fileURLWithPath: to)
+//    for name in names {
+//        //var file = url.lastPathComponent
+//        //file.removeFirst()
+//        let dst = dst_root.appendingPathComponent(name, isDirectory: false)
+//        try! FM.removeItem(at: dst)
+//    }
+//}
 
 
-func downloadPython() {
-    let url = URL(string: "https://www.python.org/ftp/python/3.9.2/python-3.9.2-macosx10.9.pkg")
-    print("""
-        Python 3.9 not found, do you wish for PythonSwiftLink to download <python-3.9.2-macosx10.9.pkg>
-        from \(url!) ?
-    """)
-    print("enter y or yes:", separator: "", terminator: " ")
-    if let input = readLine()?.lowercased() {
-        if ANSWERS.contains(input) {
-            FileDownloader.loadFileSync(url: url!) { (path, error) in
-                
-                print("\nPython 3.9.2 downloaded to : \(path!)")
-                //TODO: showInFinder(url: path!)
-//              showInFinder(url: path!)
-                print("\nrun <python-3.9.2-macosx10.9.pkg> in the finder window")
-                    //readLine()
-                print("run \"/Applications/Python 3.9/Install Certificates.command\"\n")
-                }
-        }
-    }
-    
-}
+//func downloadPython() {
+//    let url = URL(string: "https://www.python.org/ftp/python/3.9.2/python-3.9.2-macosx10.9.pkg")
+//    print("""
+//        Python 3.9 not found, do you wish for PythonSwiftLink to download <python-3.9.2-macosx10.9.pkg>
+//        from \(url!) ?
+//    """)
+//    print("enter y or yes:", separator: "", terminator: " ")
+//    if let input = readLine()?.lowercased() {
+//        if ANSWERS.contains(input) {
+//            FileDownloader.loadFileSync(url: url!) { (path, error) in
+//
+//                print("\nPython 3.9.2 downloaded to : \(path!)")
+//                //TODO: showInFinder(url: path!)
+////              showInFinder(url: path!)
+//                print("\nrun <python-3.9.2-macosx10.9.pkg> in the finder window")
+//                    //readLine()
+//                print("run \"/Applications/Python 3.9/Install Certificates.command\"\n")
+//                }
+//        }
+//    }
+//
+//}
 
 
 extension URL {
@@ -192,59 +192,59 @@ func getDocumentsDirectory() -> URL {
 
 
 
-extension Collection {
-@inlinable
-public __consuming func split_(
-    maxSplits: Int = Int.max,
-    omittingEmptySubsequences: Bool = true,
-    includeSeparator: Bool = false,
-    whereSeparator isSeparator: (Element) throws -> Bool
-) rethrows -> [SubSequence] {
-    var result: [SubSequence] = []
-    var subSequenceStart: Index = startIndex
-
-    func appendSubsequence(end: Index) -> Bool {
-        if subSequenceStart == end && omittingEmptySubsequences {
-            return false
-        }
-        result.append(self[subSequenceStart..<end])
-        return true
-    }
-
-    if maxSplits == 0 || isEmpty {
-        _ = appendSubsequence(end: endIndex)
-        return result
-    }
-
-    var subSequenceEnd = subSequenceStart
-    let cachedEndIndex = endIndex
-    while subSequenceEnd != cachedEndIndex {
-        if try isSeparator(self[subSequenceEnd]) {
-            let didAppend = appendSubsequence(end: subSequenceEnd)
-            if includeSeparator {
-                subSequenceStart = subSequenceEnd
-                formIndex(after: &subSequenceEnd)
-            } else {
-                formIndex(after: &subSequenceEnd)
-                subSequenceStart = subSequenceEnd
-            }
-
-            if didAppend && result.count == maxSplits {
-                break
-            }
-            continue
-        }
-        formIndex(after: &subSequenceEnd)
-    }
-
-    if subSequenceStart != cachedEndIndex || !omittingEmptySubsequences {
-        result.append(self[subSequenceStart..<cachedEndIndex])
-    }
-
-    return result
-}
-
-}
+//extension Collection {
+//@inlinable
+//public __consuming func split_(
+//    maxSplits: Int = Int.max,
+//    omittingEmptySubsequences: Bool = true,
+//    includeSeparator: Bool = false,
+//    whereSeparator isSeparator: (Element) throws -> Bool
+//) rethrows -> [SubSequence] {
+//    var result: [SubSequence] = []
+//    var subSequenceStart: Index = startIndex
+//
+//    func appendSubsequence(end: Index) -> Bool {
+//        if subSequenceStart == end && omittingEmptySubsequences {
+//            return false
+//        }
+//        result.append(self[subSequenceStart..<end])
+//        return true
+//    }
+//
+//    if maxSplits == 0 || isEmpty {
+//        _ = appendSubsequence(end: endIndex)
+//        return result
+//    }
+//
+//    var subSequenceEnd = subSequenceStart
+//    let cachedEndIndex = endIndex
+//    while subSequenceEnd != cachedEndIndex {
+//        if try isSeparator(self[subSequenceEnd]) {
+//            let didAppend = appendSubsequence(end: subSequenceEnd)
+//            if includeSeparator {
+//                subSequenceStart = subSequenceEnd
+//                formIndex(after: &subSequenceEnd)
+//            } else {
+//                formIndex(after: &subSequenceEnd)
+//                subSequenceStart = subSequenceEnd
+//            }
+//
+//            if didAppend && result.count == maxSplits {
+//                break
+//            }
+//            continue
+//        }
+//        formIndex(after: &subSequenceEnd)
+//    }
+//
+//    if subSequenceStart != cachedEndIndex || !omittingEmptySubsequences {
+//        result.append(self[subSequenceStart..<cachedEndIndex])
+//    }
+//
+//    return result
+//}
+//
+//}
 
 
 extension String {
